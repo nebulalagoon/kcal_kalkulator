@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hr">
+  
+  <head>
+    
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../kcal_calculator/kcal_style.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" type="text/css">
+    <link rel="icon" type="image/png" href="../favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../favicon-16x16.png" sizes="16x16" />
+
+    <title>Dnevne energetske potrebe</title>
+    
+  </head>
+  
+  <body>
+    
+    <h1>Kalkulator Dnevnih Energetskih Potreba</h1>
+    
+    <section id="input">
+        <div id="sex">
+          <label for="sex_inp">Spol:</label>
+          <select id="sex_inp" name="sex_inp" required>
+            <option value="M">M</option>
+            <option value="F">Ž</option>
+          </select>
+        </div>
+
+        <div id="age">
+          <label for="age_inp"> Dob (godine):</label>
+          <input id="age_inp" name="age" type="number" min=15 value="15" required ></input>
+        </div>
+
+        <div id="mass">
+          <label for="mass_inp"> Masa (kg):</label>
+          <input id="mass_inp" name="mass" type="number" min=1 max=700 step=0.1 value="1" required></input>
+        </div>
+
+        <div id="height">
+          <label for="height_inp"> Visina (cm):</label>
+          <input id="height_inp" name="height" type="number" step=1 min=1 max=300 value="1" required></input>
+        </div>
+
+        <div id="activity">
+            <label for="act_inp">Razina tjelesne aktivnosti:</label>
+            <select id="act_inp" name="act_inp" required>
+              <option value=1.53>Sjedeća ili lagana aktivnost</option>
+              <option value=1.76>Aktivna ili srednja aktivnost</option>
+              <option value=2.25>Izrazita aktivnost</option>
+            </select>
+          </div>
+
+    <div id="formula">
+        <label for="Formula_select">Formula:</label>
+        <select id="formula_select" name="for_inp" required>
+            <option value="Harris-Benedict">Harris-Benedict</option>
+            <option value="Mifflin-St. Jeor">Mifflin-St. Jeor</option>
+        </select>
+    </div>
+
+        <button id="run" type="button">Računaj</button>
+        
+    </section> 
+
+  <script src="kcal_kalkulator.js"></script>
+  </body>
+</html>
