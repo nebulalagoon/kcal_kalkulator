@@ -35,6 +35,7 @@ function calculate() {
     let sexInput = document.querySelector('#sex_inp').value;
     let actInput = document.querySelector ('#act_inp').value;
     let forInput = document.querySelector('#formula_select').value;
+    let tee = 0;
 
     if ((massInput < 1) || (heightInput < 1) || (massInput > 700) || (heightInput > 300) || (ageInput <= 0)) {
         const err = document.createElement('section');
@@ -44,7 +45,7 @@ function calculate() {
         document.body.appendChild(err);
       } else if (ageInput < 15) {
        const warning = document.createElement('section');
-       warning.textContent = 'Ove formule nisu pogodne za procjenu energetskih potreba djece mlađe od 15 godin.';
+       warning.textContent = 'Ove formule nisu pogodne za procjenu energetskih potreba djece mlađe od 15 godina.';
        warning.className = 'result';
        warning.id = 'warning';
        document.body.appendChild(warning);
@@ -53,12 +54,12 @@ function calculate() {
             tee = harrisBenedict(sexInput, ageInput, massInput, heightInput, actInput);
         } else {
             tee = mifflinStJeor(sexInput, ageInput, massInput, heightInput, actInput);
-        }
         };
         const res = document.createElement('section');
-        res.textContent = 'Vaše dnevne energetske potrebe iznose otprilike ' + tee.toFixed(1) + ' kcal.';
+        res.textContent = 'Vaše dnevne energetske potrebe iznose otprilike ' + tee.toFixed(0) + ' kcal.';
         res.className = 'result';
         document.body.appendChild(res);
+    };
 }; 
 
 //button - event listener
